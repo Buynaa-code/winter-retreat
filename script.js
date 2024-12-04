@@ -109,10 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Weather Information
-    async function getWeather(city) {
+    const locations = {
+        'khuvsgul': { lat: 51.1042, lon: 100.1583 },
+        'gobi': { lat: 43.5791, lon: 104.7741 },
+        'terelj': { lat: 47.8400, lon: 107.4804 }
+    };
+
+    async function getWeather(location) {
         try {
             const response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=YOUR_API_KEY`
+                `https://api.openweathermap.org/data/2.5/weather?lat=${locations[location].lat}&lon=${locations[location].lon}&units=metric&appid=YOUR_API_KEY`
             );
             const data = await response.json();
             return `${Math.round(data.main.temp)}°C - ${data.weather[0].main}`;
@@ -124,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update weather for each destination
     async function updateWeather() {
         const weatherElements = document.querySelectorAll('.weather-info');
-        const cities = ['Paris', 'Santorini', 'Venice'];
+        const cities = ['khuvsgul', 'gobi', 'terelj'];
         
         for (let i = 0; i < cities.length; i++) {
             const weather = await getWeather(cities[i]);
