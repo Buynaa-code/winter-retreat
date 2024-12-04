@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #f06292;
+    --text-color: #4a4a4a;
+    --background-color: #fff5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.heart-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    background: 
+        radial-gradient(circle at 100% 50%, transparent 20%, rgba(255, 107, 107, 0.3) 21%, rgba(255, 107, 107, 0.3) 34%, transparent 35%, transparent),
+        radial-gradient(circle at 0% 50%, transparent 20%, rgba(255, 107, 107, 0.3) 21%, rgba(255, 107, 107, 0.3) 34%, transparent 35%, transparent) 0 -50px;
+    background-size: 75px 100px;
+}
+
+.content {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-box {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.love-message {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.message-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.memory-gallery {
+    margin: 3rem 0;
+}
+
+.memory-gallery h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.photo-placeholder {
+    aspect-ratio: 3/4;
+    background-color: #ffd6d6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo-placeholder:hover {
+    transform: scale(1.05);
+}
+
+.interactive-section {
+    margin: 3rem 0;
+    position: relative;
+}
+
+#love-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+#love-button:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary-color);
+}
+
+.reasons-list {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reasons-list.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reasons-list h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.reasons-list ul {
+    list-style: none;
+    text-align: left;
+}
+
+.reasons-list li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.reasons-list li::before {
+    content: '❤️';
+    position: absolute;
+    left: 0;
+    transform: scale(0.8);
+}
+
+.hidden {
+    display: none;
+}
+
+#floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: float 3s ease-in infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .message-box {
+        padding: 1.5rem;
+    }
+    
+    .photos {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
