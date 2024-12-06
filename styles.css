@@ -1,604 +1,116 @@
-:root {
-    --primary-color: #ff6b6b;
-    --secondary-color: #f06292;
-    --text-color: #4a4a4a;
-    --background-color: #fff5f5;
-}
-
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
     min-height: 100vh;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-}
-
-.heart-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.1;
-    background: 
-        radial-gradient(circle at 100% 50%, transparent 20%, rgba(255, 107, 107, 0.3) 21%, rgba(255, 107, 107, 0.3) 34%, transparent 35%, transparent),
-        radial-gradient(circle at 0% 50%, transparent 20%, rgba(255, 107, 107, 0.3) 21%, rgba(255, 107, 107, 0.3) 34%, transparent 35%, transparent) 0 -50px;
-    background-size: 75px 100px;
-}
-
-.content {
     text-align: center;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-    color: var(--primary-color);
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.message-box {
-    max-width: 600px;
-    margin: 0 auto 3rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.love-message {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.message-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.signature {
-    font-style: italic;
-    color: var(--secondary-color);
-}
-
-.memory-gallery {
-    margin: 3rem 0;
-}
-
-.memory-gallery h2 {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-}
-
-.photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
     padding: 20px;
 }
 
-.photo-placeholder {
-    aspect-ratio: 3/4;
-    background-color: #ffd6d6;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.photo-placeholder:hover {
-    transform: scale(1.05);
-}
-
-.photo-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #f5f5f5;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.photo-preview {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.photo-input {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.upload-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.photo-container:hover .upload-overlay {
-    opacity: 1;
-}
-
-.photo-container:hover .photo-preview {
-    transform: scale(1.1);
-}
-
-.interactive-section {
-    margin: 3rem 0;
-    position: relative;
-}
-
-#love-button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background-color: var(--primary-color);
-    color: white;
+.love-button {
+    font-size: 1.5rem;
+    padding: 20px 40px;
     border: none;
     border-radius: 50px;
+    background: white;
+    color: #ff6b6b;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-#love-button:hover {
+.love-button:hover {
     transform: scale(1.05);
-    background-color: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.love-button i {
+    color: #ff6b6b;
 }
 
 .reasons-list {
     max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: all 0.5s ease;
 }
 
-.reasons-list.show {
+.reasons-list.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.reasons-list.hidden {
+    display: none;
+}
+
+.reasons-list h1 {
+    color: #ff6b6b;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.reasons {
+    display: grid;
+    gap: 20px;
+}
+
+.reason {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.reason.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.reasons-list h2 {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-}
-
-.reasons-list ul {
-    list-style: none;
-    text-align: left;
-}
-
-.reasons-list li {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.reasons-list li::before {
-    content: '❤️';
-    position: absolute;
-    left: 0;
-    transform: scale(0.8);
-}
-
-.hidden {
-    display: none;
-}
-
-#floating-hearts {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.floating-heart {
-    position: absolute;
+.reason i {
     font-size: 1.5rem;
-    animation: float 3s ease-in infinite;
-    opacity: 0;
+    color: #ff6b6b;
+}
+
+.reason p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
 }
 
 @keyframes float {
     0% {
-        transform: translateY(0) scale(0.5);
-        opacity: 0;
+        transform: translateY(0px);
     }
     50% {
-        opacity: 1;
+        transform: translateY(-10px);
     }
     100% {
-        transform: translateY(-100vh) scale(1.5);
-        opacity: 0;
+        transform: translateY(0px);
     }
 }
 
-/* Destination Section Styles */
-.destination-section {
-    margin: 4rem 0;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.destination-section h2 {
-    color: var(--secondary-color);
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.destination-carousel {
-    position: relative;
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    gap: 2rem;
-    padding: 1rem;
-    margin: 0 -1rem;
-}
-
-.destination-card {
-    flex: 0 0 300px;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.destination-card:hover {
-    transform: translateY(-10px);
-}
-
-.destination-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-    transition: transform 0.3s ease;
-}
-
-.destination-card img:hover {
-    transform: scale(1.05);
-}
-
-.destination-card h3 {
-    color: var(--primary-color);
-    padding: 1rem;
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.destination-card p {
-    color: var(--text-color);
-    padding: 0 1rem;
-    margin: 0.5rem 0;
-}
-
-.destination-details {
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-top: 1px solid #eee;
-}
-
-.weather-info {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    background: #fff;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.activities {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.activities li {
-    padding: 0.5rem 0;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    border-bottom: 1px dashed #eee;
-}
-
-.activities li:last-child {
-    border-bottom: none;
-}
-
-.destination-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.prev-btn, .next-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-}
-
-.prev-btn:hover, .next-btn:hover {
-    background-color: var(--secondary-color);
-}
-
-#plan-trip-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 2rem;
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-}
-
-#plan-trip-btn:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0.5rem;
-    }
-    
-    .content {
-        padding: 1rem;
-    }
-    
-    .title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .message-box {
-        padding: 1rem;
-        margin: 0 auto 1.5rem;
-    }
-    
-    .love-message {
-        font-size: 1.2rem;
-    }
-    
-    .message-text {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-    
-    .photos {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .photo-placeholder {
-        aspect-ratio: 16/9;
-    }
-    
-    .destination-section {
-        margin: 2rem 0;
-        padding: 1rem;
-    }
-    
-    .destination-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .destination-carousel {
-        gap: 0.5rem;
-        padding: 0.5rem;
-        margin: 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-    }
-    
-    .destination-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-        margin-right: 0.5rem;
-    }
-    
-    .destination-card img {
-        height: 150px;
-    }
-    
-    .destination-card h3 {
-        font-size: 1.2rem;
-        padding: 0.5rem;
-    }
-    
-    .destination-details {
-        padding: 0.5rem;
-    }
-    
-    .activities li {
-        padding: 0.3rem 0;
-        font-size: 0.85rem;
-    }
-    
-    .destination-controls {
-        margin: 1rem 0;
-    }
-    
-    .prev-btn, .next-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    #plan-trip-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        margin-top: 1rem;
-    }
-
-    .reasons-list {
-        padding: 1rem;
-        margin: 1rem auto;
-    }
-
-    .reasons-list h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-    }
-
-    .reasons-list li {
-        font-size: 0.9rem;
-        padding: 0.5rem 0;
-    }
-
-    /* Modal adjustments for mobile */
-    .modal-content {
-        width: 90%;
-        max-width: none;
-        margin: 1rem;
-        padding: 1rem;
-    }
-
-    .destination-option {
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
-
-    .close-modal {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Small phones */
-@media (max-width: 380px) {
-    .title {
-        font-size: 1.5rem;
-    }
-    
-    .love-message {
-        font-size: 1.1rem;
-    }
-    
-    .message-text {
-        font-size: 0.9rem;
-    }
-    
-    .destination-card {
-        flex: 0 0 95%;
-    }
-    
-    #plan-trip-btn {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Landscape mode */
-@media (max-height: 500px) and (orientation: landscape) {
-    .container {
-        padding: 0.5rem;
-    }
-    
-    .content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .message-box {
-        flex: 1 1 300px;
-    }
-    
-    .destination-section {
-        flex: 1 1 300px;
-    }
-    
-    .title {
-        width: 100%;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-}
-
-/* Touch device optimizations */
-@media (hover: none) {
-    .destination-card {
-        transform: none !important;
-    }
-    
-    .destination-carousel {
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 1rem;
-    }
-    
-    .destination-card {
-        scroll-snap-align: center;
-    }
-    
-    #plan-trip-btn:active {
-        transform: scale(0.95);
-    }
+.floating {
+    animation: float 2s ease-in-out infinite;
 }

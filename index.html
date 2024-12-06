@@ -1,115 +1,42 @@
 <!DOCTYPE html>
-<html lang="mn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Төрсөн өдрийн мэнд, Хайрт минь! ❤️</title>
+    <title>Happy Birthday!</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="heart-bg"></div>
+        <button id="love-button" class="love-button">
+            <i class="fas fa-heart"></i>
+            Click for a Birthday Surprise!
+        </button>
         
-        <div class="content animate__animated animate__fadeIn">
-            <h1 class="title animate__animated animate__heartBeat animate__infinite">Төрсөн өдрийн мэнд!</h1>
-            
-            <div class="message-box">
-                <p class="love-message">Миний хайрт,</p>
-                <p class="message-text">
-                    Чамтай хамт өнгөрүүлсэн хором бүр миний хувьд үнэ цэнэтэй. 
-                    Чиний инээмсэглэл миний хамгийн харанхуй өдрийг гэрэлтүүлж, 
-                    чиний хайр миний зүрхийг бүрэн дүүрэн болгодог. 
-                    Чи зүгээр л миний найз биш, миний амьдралын хань, сүнсний минь хагас, миний бүхэн юм.
-                </p>
-                <p class="signature">Хайр дүүрэн ❤️</p>
-            </div>
-
-            <div class="memory-gallery">
-                <h2>Бидний Дурсамжууд</h2>
-                <div class="photos" id="photoGallery">
-                    <div class="photo-container">
-                        <img class="photo-preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="Зураг">
-                        <input type="file" class="photo-input" accept="image/*">
-                        <div class="upload-overlay">+</div>
-                    </div>
-                    <div class="photo-container">
-                        <img class="photo-preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="Зураг">
-                        <input type="file" class="photo-input" accept="image/*">
-                        <div class="upload-overlay">+</div>
-                    </div>
-                    <div class="photo-container">
-                        <img class="photo-preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="Зураг">
-                        <input type="file" class="photo-input" accept="image/*">
-                        <div class="upload-overlay">+</div>
-                    </div>
+        <div id="reasons-list" class="reasons-list hidden">
+            <h1>Happy Birthday!</h1>
+            <div class="reasons">
+                <div class="reason">
+                    <i class="fas fa-star"></i>
+                    <p>Your smile brightens everyone's day</p>
                 </div>
-            </div>
-
-            <div class="interactive-section">
-                <button id="love-button" class="animate__animated">Гайхалтай зүйл харах! 💝</button>
-                <div id="floating-hearts"></div>
-            </div>
-
-            <div class="reasons-list hidden" id="reasons-list">
-                <h2>Би Яагаад Чамд Хайртай Вэ</h2>
-                <ul>
-                    <li>Чиний үзэсгэлэнт инээмсэглэл</li>
-                    <li>Чиний сайхан сэтгэл</li>
-                    <li>Чи намайг инээлгэдэг арга</li>
-                    <li>Чиний гайхалтай зан чанар</li>
-                    <li>Чи намайг үргэлж дэмждэг</li>
-                </ul>
-            </div>
-
-            <div class="destination-section">
-                <h2>Бидний Дараагийн Аялал 🌎</h2>
-                <div class="destination-carousel">
-                    <div class="destination-card" data-location="khuvsgul">
-                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/b7/2c/8d/lake-khovsgol.jpg?w=1200&h=-1&s=1" alt="Хөвсгөл нуур">
-                        <h3>Хөвсгөл нуур</h3>
-                        <p>Монголын Швейцарь - Далайн эх 💙</p>
-                        <div class="destination-details">
-                            <div class="weather-info">Цаг агаар ачаалж байна...</div>
-                            <ul class="activities">
-                                <li>Нуур дээр завиар аялах</li>
-                                <li>Цаатан иргэдтэй уулзах</li>
-                                <li>Ойн дундуур алхах</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="destination-card" data-location="gobi">
-                        <img src="https://www.mongolia-trips.com/upload/2021/12/gobi-desert-hongor-sand-dunes.jpg" alt="Говийн Цөл">
-                        <h3>Говийн Цөл</h3>
-                        <p>Үзэсгэлэнт элсэн манхан, Хонгорын элс 🐪</p>
-                        <div class="destination-details">
-                            <div class="weather-info">Цаг агаар ачаалж байна...</div>
-                            <ul class="activities">
-                                <li>Тэмээн аялал</li>
-                                <li>Баянзаг - Улаан эрэг</li>
-                                <li>Говийн нар жаргалт</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="destination-card" data-location="terelj">
-                        <img src="https://www.advantour.com/img/mongolia/gorkhi-terelj/gorkhi-terelj_general.jpg" alt="Тэрэлж">
-                        <h3>Тэрэлж</h3>
-                        <p>Байгалийн үзэсгэлэнт парк 🏔️</p>
-                        <div class="destination-details">
-                            <div class="weather-info">Цаг агаар ачаалж байна...</div>
-                            <ul class="activities">
-                                <li>Морин аялал</li>
-                                <li>Мэлхий хад үзэх</li>
-                                <li>Гэр буудалд хоноглох</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="reason">
+                    <i class="fas fa-heart"></i>
+                    <p>Your kindness knows no bounds</p>
                 </div>
-                <div class="destination-controls">
-                    <button class="prev-btn">❮</button>
-                    <button class="next-btn">❯</button>
+                <div class="reason">
+                    <i class="fas fa-gift"></i>
+                    <p>You make the world a better place</p>
                 </div>
-                <button id="plan-trip-btn" class="animate__animated">Хамтдаа Аялалаа Төлөвлөх 🎈</button>
+                <div class="reason">
+                    <i class="fas fa-magic"></i>
+                    <p>Your presence brings joy to all</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-crown"></i>
+                    <p>You're simply amazing!</p>
+                </div>
             </div>
         </div>
     </div>
